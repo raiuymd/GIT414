@@ -1,142 +1,113 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
- 
+
 body {
-  font-family: sans-serif;
-  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: #222;
-  background-color: #fff;
+  background-color: #f5f5f5;
 }
- 
+
 header {
   background-color: #1a1a2e;
   color: #fff;
-  padding: 1.5rem 1rem;
   text-align: center;
+  padding: 2rem 1rem;
 }
- 
-header h1 {
-  font-size: 1.75rem;
-  margin-bottom: 0.25rem;
-}
- 
+
 nav {
   background-color: #16213e;
 }
- 
+
 nav ul {
   list-style: none;
   display: flex;
-  flex-direction: column; /* stacked on mobile */
+  justify-content: center;
+  gap: 1rem;
 }
- 
-nav ul li a {
+
+nav a {
   display: block;
-  padding: 0.75rem 1rem;
   color: #e0e0e0;
   text-decoration: none;
+  padding: 0.75rem 1rem;
 }
- 
-nav ul li a:hover {
+
+nav a:hover {
   background-color: #0f3460;
   color: #fff;
 }
- 
+
 main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: 1rem;
 }
- 
-main section {
-  margin-bottom: 2rem;
+
+section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
 }
- 
-main h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+
+h2 {
   color: #1a1a2e;
+  margin-bottom: 0.5rem;
 }
- 
-main p {
+
+p {
   color: #444;
 }
- 
+
+ul {
+  padding-left: 1.25rem;
+}
+
+nav ul {
+  padding-left: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
 footer {
   background-color: #1a1a2e;
   color: #aaa;
   text-align: center;
   padding: 1rem;
-  font-size: 0.875rem;
 }
- 
-/* Medium */
+
+
+/* MEDIUM — main = 2 grid columns */
+
 @media (min-width: 600px) {
- 
-  header {
-    padding: 2rem 1.5rem;
-  }
- 
-  header h1 {
-    font-size: 2rem;
-  }
- 
-  nav ul {
-    flex-direction: row;
-  }
- 
   main {
-    padding: 1.5rem;
-    max-width: 720px;
-    margin: 0 auto;
-  }
- 
-  main h2 {
-    font-size: 1.5rem;
-  }
- 
-}
- 
- 
-/* LARGE */
-@media (min-width: 1024px) {
- 
-  header {
-    padding: 2.5rem 2rem;
-  }
- 
-  header h1 {
-    font-size: 2.5rem;
-  }
- 
-  main {
-    max-width: 960px;
-    padding: 2rem;
-  }
- 
-  main {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
   }
- 
 }
- 
- 
-/* XL */
-@media (min-width: 1280px) {
- 
-  header h1 {
-    font-size: 3rem;
-  }
- 
+
+
+/* 
+   LARGE — main = 3 grid columns */
+
+@media (min-width: 1024px) {
   main {
-    max-width: 1200px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
- 
+}
+
+
+/* XL — main = 4 grid columns*/
+@media (min-width: 1280px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
